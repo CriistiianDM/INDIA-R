@@ -1,37 +1,102 @@
 ---
+output:
+  pdf_document: default
+  html_document: default
+---
+```{r setup, include=FALSE}
+# Instalar paquetes si es necesario
+if(!require(readr)) install.packages("readr")
+if(!require(dplyr)) install.packages("dplyr")
+if(!require(ggplot2)) install.packages("ggplot2")
+if(!require(knitr)) install.packages("knitr")
+
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(knitr)
+```
+
+```{r, out.width='20%', echo=FALSE}
+#knitr::include_graphics("public/assests/logo/logo.jpg")
+```
+
+---
 title: "INDICADORES ECONÓMICOS BRICS"
 author: 
   - "Leslie Johana Galviz"
   - "Cristian Machado"
 date: "2024"
-output: pdf_document
+output: 
+  pdf_document:
+    latex_engine: xelatex
 geometry: margin=1in
 header-includes:
+  - \usepackage{fancyhdr}
+  - \pagestyle{fancy}
+  - \fancyhead[L]{\includegraphics[width=2cm]{C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg}}
+  - \setlength{\headheight}{40pt}
   - \usepackage{setspace}
+  - \doublespacing
+  - \doublespacing
   - \doublespacing
 ---
 
-\begin{center}
-**Docente:** Yennyfer Portilla Yela
 
-**Universidad del Valle - Facultad de Ingeniería**  
-Probabilidad y Estadística  
-Santiago de Cali  
-2024  
+\begin{center}
+\textbf{**Docente:** Yennyfer Portilla Yela} \\[1ex]
 \end{center}
+
+
+\vfill
+
+\begin{center}
+\textbf{Universidad del Valle - Facultad de Ingeniería} \\[1ex]
+\textbf{Probabilidad y Estadística} \\[1ex]
+\textbf{Santiago de Cali} \\[1ex]
+\end{center}
+
+\newpage
 
 # Tabla de Contenido
 
 - Introducción
 - Identificasion de variables
-- 
-- ¿De qué trata?
+- Contextualizacion
 - ¿Cuál es el problema para analizar?
+
+\newpage
 
 # Introducción
 
-En un mundo de constante cambio, entender cómo las economías de las grandes potencias influyen en la formulación de políticas, alianzas geopolíticas, armamento militar y crecimiento de los países tercermundistas han inflado el costo de vida digno, daños al medioambiente y el control de las masas mediante una moneda de cambio. 
+<p>En un mundo de constante cambio, entender cómo las economías de las grandes potencias influyen en la formulación de políticas, alianzas geopolíticas, armamento militar y crecimiento de los países tercermundistas han inflado el costo de vida digno, daños al medioambiente y el control de las masas mediante una moneda de cambio.</p> 
 
 En este estudio se analiza los diversos indicadores económicos del conjunto BRICS (Brasil, Rusia, India, China y Sudáfrica) desde el año 2019-2020 del cual se analiza el impacto económico en las diversas bolsas de valores y cómo esto cambió el curso del mercado internacional y la creación de políticas a favor de su organización.
 
 El objetivo de este análisis es identificar patrones en los indicadores económicos de BRICS proporcionando una visión de cómo este crecimiento económico ha influido en la inflación de los precios internacionales, consumo excesivo de los recursos naturales y cómo estos indicadores han influido en los países tercermundistas que toman de ejemplo a las grandes potencias como lo puede ser este tipo de alianzas económicas que buscan un cambio del orden mundial actual.
+
+<!-- cARGAR DATOS -->
+```{r, echo=FALSE}
+  csv_directory <- "DATA/"
+
+  csv_files <- list.files(path = csv_directory, pattern = "\\.csv$", full.names = TRUE)
+
+  combined_data <- do.call(rbind, lapply(csv_files, read.csv))
+```
+
+
+\newpage
+
+```{r}
+library(ggplot2)
+library(dplyr)
+
+  filter(CountryCode == "BRA")
+
+# Crear gráfico de línea
+ggplot(brazil_data, aes(x = Date, y = Value)) +
+  geom_line() +
+  labs(title = "Gráfico de Línea para CountryCode BRA",
+       x = "Fecha",
+       y = "Valor") +
+  theme_minimal()
+```
