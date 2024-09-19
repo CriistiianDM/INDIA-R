@@ -1,0 +1,37 @@
+---
+title: "INDICADORES ECONÓMICOS BRICS"
+author: 
+  - "Leslie Johana Galviz"
+  - "Cristian Machado"
+date: "2024"
+output: pdf_document
+geometry: margin=1in
+header-includes:
+  - \usepackage{setspace}
+  - \doublespacing
+---
+
+\begin{center}
+**Docente:** Yennyfer Portilla Yela
+
+**Universidad del Valle - Facultad de Ingeniería**  
+Probabilidad y Estadística  
+Santiago de Cali  
+2024  
+\end{center}
+
+# Tabla de Contenido
+
+- Introducción
+- Identificasion de variables
+- 
+- ¿De qué trata?
+- ¿Cuál es el problema para analizar?
+
+# Introducción
+
+En un mundo de constante cambio, entender cómo las economías de las grandes potencias influyen en la formulación de políticas, alianzas geopolíticas, armamento militar y crecimiento de los países tercermundistas han inflado el costo de vida digno, daños al medioambiente y el control de las masas mediante una moneda de cambio. 
+
+En este estudio se analiza los diversos indicadores económicos del conjunto BRICS (Brasil, Rusia, India, China y Sudáfrica) desde el año 2019-2020 del cual se analiza el impacto económico en las diversas bolsas de valores y cómo esto cambió el curso del mercado internacional y la creación de políticas a favor de su organización.
+
+El objetivo de este análisis es identificar patrones en los indicadores económicos de BRICS proporcionando una visión de cómo este crecimiento económico ha influido en la inflación de los precios internacionales, consumo excesivo de los recursos naturales y cómo estos indicadores han influido en los países tercermundistas que toman de ejemplo a las grandes potencias como lo puede ser este tipo de alianzas económicas que buscan un cambio del orden mundial actual.
