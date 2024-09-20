@@ -21,7 +21,7 @@ library(knitr)
 ```
 
 ---
-title: "INDICADORES ECONÓMICOS BRICS"
+title: "DATOS DE PRODUCCION DE CULTIVOS INDIA"
 author: 
   - "Leslie Johana Galviz"
   - "Cristian Machado"
@@ -68,35 +68,20 @@ header-includes:
 
 # Introducción
 
-<p>En un mundo de constante cambio, entender cómo las economías de las grandes potencias influyen en la formulación de políticas, alianzas geopolíticas, armamento militar y crecimiento de los países tercermundistas han inflado el costo de vida digno, daños al medioambiente y el control de las masas mediante una moneda de cambio.</p> 
+<p>En un mundo donde la seguridad alimentaria y la sostenibilidad agrícola son cada vez más cruciales, comprender las dinámicas de la producción de cultivos se convierte en un pilar fundamental para la formulación de políticas agrícolas y la toma de decisiones estratégicas en el sector agroalimentario.</p>
+Este estudio se centra en un extenso conjunto de datos sobre la producción de cultivos en India, abarcando más de 246,000 registros a lo largo de varios años. La información incluye diversos tipos de cultivos, métricas de producción y datos regionales que reflejan la compleja realidad agrícola del país. Analizaremos las tendencias temporales y regionales en la producción de cultivos, identificando patrones significativos y variaciones regionales que influyen en la eficiencia y productividad agrícola.
 
-En este estudio se analiza los diversos indicadores económicos del conjunto BRICS (Brasil, Rusia, India, China y Sudáfrica) desde el año 2019-2020 del cual se analiza el impacto económico en las diversas bolsas de valores y cómo esto cambió el curso del mercado internacional y la creación de políticas a favor de su organización.
-
-El objetivo de este análisis es identificar patrones en los indicadores económicos de BRICS proporcionando una visión de cómo este crecimiento económico ha influido en la inflación de los precios internacionales, consumo excesivo de los recursos naturales y cómo estos indicadores han influido en los países tercermundistas que toman de ejemplo a las grandes potencias como lo puede ser este tipo de alianzas económicas que buscan un cambio del orden mundial actual.
-
+El objetivo de este análisis es desarrollar modelos predictivos que ayuden a anticipar futuros niveles de producción y detectar riesgos potenciales. Además, se busca extraer insights clave sobre los indicadores que impactan la producción de cultivos, facilitando una mejor toma de decisiones para los stakeholders del sector agroalimentario. Este análisis permitirá una comprensión profunda de cómo factores como las prácticas agrícolas, las condiciones ambientales y las políticas regionales afectan la producción de cultivos, promoviendo una gestión más eficaz y sostenible de los recursos agrícolas en India.
 <!-- cARGAR DATOS -->
 ```{r, echo=FALSE}
-  csv_directory <- "DATA/"
+  csv_directory <- "DATA2/"
 
   csv_files <- list.files(path = csv_directory, pattern = "\\.csv$", full.names = TRUE)
 
   combined_data <- do.call(rbind, lapply(csv_files, read.csv))
+  head(combined_data,n=10)
 ```
 
 
 \newpage
 
-```{r}
-library(ggplot2)
-library(dplyr)
-
-  filter(CountryCode == "BRA")
-
-# Crear gráfico de línea
-ggplot(brazil_data, aes(x = Date, y = Value)) +
-  geom_line() +
-  labs(title = "Gráfico de Línea para CountryCode BRA",
-       x = "Fecha",
-       y = "Valor") +
-  theme_minimal()
-```
