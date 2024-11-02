@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.19)  19 SEP 2024 19:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.19)  1 NOV 2024 23:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -139,7 +139,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 ) (c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
 (c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
@@ -147,15 +147,15 @@ Package xcolor Info: Driver file: pdftex.def on input line 274.
 (c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
 ) (c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
-Package xcolor Info: Model `RGB' extended on input line 1366.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 ) (c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 (c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
@@ -205,7 +205,7 @@ Package: setspace 2022/12/04 v6.7b set line spacing
 ) (c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
 (c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2024-07-10 v7.01j Hypertext links for LaTeX
+Package: hyperref 2024-10-30 v7.01k Hypertext links for LaTeX
 (c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 ) (c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
@@ -244,7 +244,7 @@ Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 \Hy@linkcounter=\count285
 \Hy@pagecounter=\count286
 (c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2024-07-10 v7.01j Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2024-10-30 v7.01k Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 ) (c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
@@ -252,7 +252,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
 \Hy@SavedSpaceFactor=\count287
 (c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2024-07-10 v7.01j Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2024-10-30 v7.01k Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
@@ -296,7 +296,7 @@ package with kernel methods
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 (c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2024-07-10 v7.01j Hyperref driver for pdfTeX
+File: hpdftex.def 2024-10-30 v7.01k Hyperref driver for pdfTeX
 (c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
@@ -426,7 +426,7 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 <C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg, id=13, 388.45125pt x 340.27126pt>
 File: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg Graphic file (type jpg)
 <use C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg>
-Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 112.
+Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 114.
 (pdftex.def)             Requested size: 56.90189pt x 49.84428pt.
 
 Package fancyhdr Warning: \headheight is too small (40.0pt): 
@@ -436,14 +436,10 @@ Package fancyhdr Warning: \headheight is too small (40.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-13.44432pt}.
 
 [2{c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc} <c:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg>]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 142.
-(c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
 
 File: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg Graphic file (type jpg)
 <use C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg>
-Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 165.
+Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 143.
 (pdftex.def)             Requested size: 56.90189pt x 49.84428pt.
 
 Package fancyhdr Warning: \headheight is too small (40.0pt): 
@@ -456,7 +452,7 @@ Package fancyhdr Warning: \headheight is too small (40.0pt):
 
 File: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg Graphic file (type jpg)
 <use C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg>
-Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 167.
+Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 168.
 (pdftex.def)             Requested size: 56.90189pt x 49.84428pt.
 
 Package fancyhdr Warning: \headheight is too small (40.0pt): 
@@ -465,25 +461,42 @@ Package fancyhdr Warning: \headheight is too small (40.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-13.44432pt}.
 
-[4] (./informe.aux)
+[4]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 171.
+(c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+
+File: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg Graphic file (type jpg)
+<use C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg>
+Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 196.
+(pdftex.def)             Requested size: 56.90189pt x 49.84428pt.
+
+Package fancyhdr Warning: \headheight is too small (40.0pt): 
+(fancyhdr)                Make it at least 53.44432pt, for example:
+(fancyhdr)                \setlength{\headheight}{53.44432pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-13.44432pt}.
+
+[5] (./informe.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 11290 strings out of 475539
- 175780 string characters out of 5775724
- 572256 words of memory out of 5000000
- 33763 multiletter control sequences out of 15000+600000
- 592797 words of font info for 62 fonts, out of 8000000 for 9000
+ 11303 strings out of 475539
+ 175924 string characters out of 5775724
+ 571427 words of memory out of 5000000
+ 33772 multiletter control sequences out of 15000+600000
+ 595795 words of font info for 63 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 89i,15n,93p,350b,594s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,15n,93p,350b,510s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmro10.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on informe.pdf (4 pages, 207768 bytes).
+Output written on informe.pdf (5 pages, 212976 bytes).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
- 54 compressed objects within 1 object stream
- 7 named destinations out of 1000 (max. 500000)
- 22 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 93 PDF objects out of 1000 (max. 8388607)
+ 69 compressed objects within 1 object stream
+ 11 named destinations out of 1000 (max. 500000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
