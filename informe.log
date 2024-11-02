@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.19)  1 NOV 2024 23:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.19)  2 NOV 2024 03:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -426,7 +426,7 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 <C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg, id=13, 388.45125pt x 340.27126pt>
 File: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg Graphic file (type jpg)
 <use C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg>
-Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 114.
+Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 118.
 (pdftex.def)             Requested size: 56.90189pt x 49.84428pt.
 
 Package fancyhdr Warning: \headheight is too small (40.0pt): 
@@ -439,7 +439,7 @@ Package fancyhdr Warning: \headheight is too small (40.0pt):
 
 File: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg Graphic file (type jpg)
 <use C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg>
-Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 143.
+Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 147.
 (pdftex.def)             Requested size: 56.90189pt x 49.84428pt.
 
 Package fancyhdr Warning: \headheight is too small (40.0pt): 
@@ -452,7 +452,7 @@ Package fancyhdr Warning: \headheight is too small (40.0pt):
 
 File: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg Graphic file (type jpg)
 <use C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg>
-Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 168.
+Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 174.
 (pdftex.def)             Requested size: 56.90189pt x 49.84428pt.
 
 Package fancyhdr Warning: \headheight is too small (40.0pt): 
@@ -462,14 +462,10 @@ Package fancyhdr Warning: \headheight is too small (40.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-13.44432pt}.
 
 [4]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 171.
-(c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
 
 File: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg Graphic file (type jpg)
 <use C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg>
-Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 196.
+Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 253.
 (pdftex.def)             Requested size: 56.90189pt x 49.84428pt.
 
 Package fancyhdr Warning: \headheight is too small (40.0pt): 
@@ -478,25 +474,51 @@ Package fancyhdr Warning: \headheight is too small (40.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-13.44432pt}.
 
-[5] (./informe.aux)
+[5]
+
+File: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg Graphic file (type jpg)
+<use C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg>
+Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 292.
+(pdftex.def)             Requested size: 56.90189pt x 49.84428pt.
+
+Package fancyhdr Warning: \headheight is too small (40.0pt): 
+(fancyhdr)                Make it at least 53.44432pt, for example:
+(fancyhdr)                \setlength{\headheight}{53.44432pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-13.44432pt}.
+
+[6]
+
+File: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg Graphic file (type jpg)
+<use C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg>
+Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 344.
+(pdftex.def)             Requested size: 56.90189pt x 49.84428pt.
+
+Package fancyhdr Warning: \headheight is too small (40.0pt): 
+(fancyhdr)                Make it at least 53.44432pt, for example:
+(fancyhdr)                \setlength{\headheight}{53.44432pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-13.44432pt}.
+
+[7] (./informe.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 11303 strings out of 475539
- 175924 string characters out of 5775724
- 571427 words of memory out of 5000000
- 33772 multiletter control sequences out of 15000+600000
- 595795 words of font info for 63 fonts, out of 8000000 for 9000
+ 11302 strings out of 475539
+ 175753 string characters out of 5775724
+ 571015 words of memory out of 5000000
+ 33755 multiletter control sequences out of 15000+600000
+ 595476 words of font info for 62 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 89i,15n,93p,350b,510s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmro10.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on informe.pdf (5 pages, 212976 bytes).
+ 89i,15n,93p,691b,514s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmro10.pfb>
+Output written on informe.pdf (7 pages, 198250 bytes).
 PDF statistics:
- 93 PDF objects out of 1000 (max. 8388607)
- 69 compressed objects within 1 object stream
- 11 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 154 PDF objects out of 1000 (max. 8388607)
+ 129 compressed objects within 2 object streams
+ 31 named destinations out of 1000 (max. 500000)
+ 134 words of extra memory for PDF output out of 10000 (max. 10000000)
 
