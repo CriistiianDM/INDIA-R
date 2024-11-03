@@ -44,10 +44,9 @@ combined_data <- do.call(rbind, lapply(csv_files, function(file) {
   read.csv(file, sep = ",", stringsAsFactors = FALSE)
 }))
 
-unique_crops <- unique(combined_data$Crop)
-
 head(unique_crops)
 nrow(combined_data)
+unique_crops <- unique(combined_data$Crop)
 
 # Iterar sobre cada cultivo único
 for (crop in unique_crops) {
