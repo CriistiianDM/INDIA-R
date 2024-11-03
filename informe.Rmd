@@ -158,3 +158,42 @@ La limpieza de datos es un paso esencial para garantizar la calidad y fiabilidad
 Ahora contamos con un conjunto de datos más preciso, lo que nos permite incorporar nuevas variables para la formulación de conclusiones. Utilizando diversas técnicas estadísticas, podremos llegar a conclusiones de alta calidad, minimizando la dispersión de datos y garantizando una interpretación más clara y relevante para poder culminar el objetivo.
 \newpage
 
+# Resultados De La Investigación 
+
+```{r, out.width='100%', echo=FALSE}
+
+csv_directory <- "Investigacion"
+
+csv_files <- list.files(path = csv_directory, pattern = "\\.csv$", full.names = TRUE)
+
+combined_data <- do.call(rbind, lapply(csv_files, function(file) {
+  read.csv(file, sep = ",", stringsAsFactors = FALSE)
+}))
+
+unique_crops <- unique(combined_data$Crop)
+unique_year <- unique(combined_data$Crop_Year)
+ 
+average_yield <- aggregate(Rendimiento ~ Crop + Crop_Year, data = combined_data, FUN = mean)
+
+ggplot(data = average_yield, aes(x = Crop_Year, y = Rendimiento, color = Crop, group = Crop)) +
+  geom_line(size = 1) +
+  geom_point(size = 2) +
+  labs(title = "Promedio de Rendimiento por Cultivo y Año",
+       x = "Año",
+       y = "Rendimiento",
+       color = "Cultivo") +
+  theme_minimal() +
+  theme(legend.position = "none")
+
+ggplot(data = average_yield, aes(x = Crop_Year, y = Rendimiento, color = Crop, group = Crop)) +
+  geom_line(size = 1) +
+  geom_point(size = 2) +
+  labs(title = "Promedio de Rendimiento por Cultivo y Año",
+       x = "Año",
+       y = "Rendimiento",
+       color = "Cultivo") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+\newpage

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.19)  3 NOV 2024 00:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.19)  3 NOV 2024 16:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -500,25 +500,71 @@ Package fancyhdr Warning: \headheight is too small (40.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-13.44432pt}.
 
-[7] (./informe.aux)
+[7]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 349.
+(c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+<informe_files/figure-latex/unnamed-chunk-2-1.pdf, id=65, 469.755pt x 325.215pt>
+File: informe_files/figure-latex/unnamed-chunk-2-1.pdf Graphic file (type pdf)
+<use informe_files/figure-latex/unnamed-chunk-2-1.pdf>
+Package pdftex.def Info: informe_files/figure-latex/unnamed-chunk-2-1.pdf  used on input line 357.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+<informe_files/figure-latex/unnamed-chunk-2-2.pdf, id=66, 469.755pt x 325.215pt>
+File: informe_files/figure-latex/unnamed-chunk-2-2.pdf Graphic file (type pdf)
+<use informe_files/figure-latex/unnamed-chunk-2-2.pdf>
+Package pdftex.def Info: informe_files/figure-latex/unnamed-chunk-2-2.pdf  used on input line 358.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--359
+[][]
+ []
+
+
+
+File: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg Graphic file (type jpg)
+<use C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg>
+Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 360.
+(pdftex.def)             Requested size: 56.90189pt x 49.84428pt.
+
+Package fancyhdr Warning: \headheight is too small (40.0pt): 
+(fancyhdr)                Make it at least 53.44432pt, for example:
+(fancyhdr)                \setlength{\headheight}{53.44432pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-13.44432pt}.
+
+[8 <./informe_files/figure-latex/unnamed-chunk-2-1.pdf>]
+
+File: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg Graphic file (type jpg)
+<use C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg>
+Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 360.
+(pdftex.def)             Requested size: 56.90189pt x 49.84428pt.
+
+Package fancyhdr Warning: \headheight is too small (40.0pt): 
+(fancyhdr)                Make it at least 53.44432pt, for example:
+(fancyhdr)                \setlength{\headheight}{53.44432pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-13.44432pt}.
+
+[9 <./informe_files/figure-latex/unnamed-chunk-2-2.pdf>] (./informe.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 11302 strings out of 475539
- 175753 string characters out of 5775724
- 571015 words of memory out of 5000000
- 33755 multiletter control sequences out of 15000+600000
- 595476 words of font info for 62 fonts, out of 8000000 for 9000
+ 11370 strings out of 475539
+ 177624 string characters out of 5775724
+ 571070 words of memory out of 5000000
+ 33816 multiletter control sequences out of 15000+600000
+ 595795 words of font info for 63 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  89i,15n,93p,691b,514s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmro10.pfb>
-Output written on informe.pdf (7 pages, 198250 bytes).
+<c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmro10.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on informe.pdf (9 pages, 283785 bytes).
 PDF statistics:
- 154 PDF objects out of 1000 (max. 8388607)
- 129 compressed objects within 2 object streams
- 31 named destinations out of 1000 (max. 500000)
- 134 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 183 PDF objects out of 1000 (max. 8388607)
+ 150 compressed objects within 2 object streams
+ 34 named destinations out of 1000 (max. 500000)
+ 152 words of extra memory for PDF output out of 10000 (max. 10000000)
 

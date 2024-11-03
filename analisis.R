@@ -1,7 +1,11 @@
+if (!require(Amelia)) install.packages("Amelia")
+if (!require(ggplot2)) install.packages("ggplot2")
+if (!require(tidyr)) install.packages("tidyr")
+if (!require(dplyr)) install.packages("dplyr")
+library(ggplot2)
 library(dplyr)
 library(Amelia)
 library(tidyr)
-library(ggplot2)
 
 csv_directory <- "DATA_NEW"
 
@@ -11,30 +15,25 @@ combined_data <- do.call(rbind, lapply(csv_files, function(file) {
   read.csv(file, sep = ",", stringsAsFactors = FALSE)
 }))
 
-# convertir en multiples columnas
-combined_data <- combined_data %>%
-  separate(State_Name.District_Name.Crop_Year.Season.Crop.Area.Production,
-           into = c("State_Name", "District_Name", "Crop_Year", "Season", "Crop", "Area", "Production"),
-           sep = ",",
-           convert = TRUE)
-
 # Nueva variable rendimiento
 combined_data <- combined_data %>%
   mutate(Rendimiento = Production / Area)
 
 # Filtrar datos para años mayores a 2020
-filtered_data <- combined_data %>%
-  filter(Crop_Year >= 2011)
+#filtered_data <- combined_data %>%
+#  filter(Crop_Year >= 2011)
 
-class(combined_data$Crop_Year)
-unique(combined_data$Crop_Year)
+#class(combined_data$Crop_Year)
+#unique(combined_data$Crop_Year)
 
-#write.csv(combined_data, "C:/Users/USUARIO/Documents/GitHub/BRICS-R/DATA_NEW/nuevaVariable.csv", row.names = FALSE)
-head(combined_data)
-nrow(filtered_data)
+write.csv(combined_data, "C:/Users/USUARIO/Documents/GitHub/BRICS-R/DATA_NEW/nueva_variable.csv", row.names = FALSE)
+#head(combined_data)
+#nrow(filtered_data)
+#nrow(combined_data)
 
 #write.csv(filtered_data, "C:/Users/USUARIO/Documents/GitHub/BRICS-R/DATA_NEW/datos_investigacion_mayor_a_2011.csv", row.names = FALSE)
 
+# AQUI LELSLI 
 # Sobre ese archivo voy a trabjar para evitar calculos pesados y sobre estos datos voy a relaizar  la inevstigacion
 csv_directory <- "Investigacion"
 
@@ -44,25 +43,24 @@ combined_data <- do.call(rbind, lapply(csv_files, function(file) {
   read.csv(file, sep = ",", stringsAsFactors = FALSE)
 }))
 
-head(unique_crops)
-nrow(combined_data)
-unique_crops <- unique(combined_data$Crop)
+# combined_data Aqui tienes la informacion para pintar los graficos
+head(combined_data)
+#nrow(combined_data)
 
-# Iterar sobre cada cultivo único
-for (crop in unique_crops) {
-  # Filtrar los datos para el cultivo actual
-  crop_data <- combined_data %>%
-    filter(Crop == crop) %>%
-    arrange(Crop_Year)
-  
-  # Crear el gráfico de línea para el rendimiento
-  p <- ggplot(crop_data, aes(x = Crop_Year, y = Rendimiento)) +
-    geom_line(color = "blue") +
-    labs(title = paste("Rendimiento de", crop, "por Año"),
-         x = "Año",
-         y = "Rendimiento") +
-    theme_minimal()
-  
-  # Mostrar el gráfico
-  print(p)
-}
+# Saco los datos unicos por año y tipo de cultivo
+unique_crops <- unique(combined_data$Crop)
+unique_year <- unique(combined_data$Crop_Year)
+
+# Saco el promedio del rendimiento por año de un tipo de cultivo 
+average_yield <- aggregate(Rendimiento ~ Crop + Crop_Year, data = combined_data, FUN = mean)
+
+
+ggplot(data = average_yield, aes(x = Crop_Year, y = Rendimiento, color = Crop, group = Crop)) +
+  geom_line(size = 1) +
+  geom_point(size = 2) +
+  labs(title = "Promedio de Rendimiento por Cultivo y Ano",
+       x = "Ano",
+       y = "Rendimiento",
+       color = "Cultivo") +
+  theme_minimal() +
+  theme(legend.position = "none")
