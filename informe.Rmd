@@ -9,11 +9,13 @@ if(!require(readr)) install.packages("readr")
 if(!require(dplyr)) install.packages("dplyr")
 if(!require(ggplot2)) install.packages("ggplot2")
 if(!require(knitr)) install.packages("knitr")
-  
+if(!require(tidyr)) install.packages("tidyr")
+
 library(readr)
 library(dplyr)
 library(ggplot2)
 library(knitr)
+library(tidyr)
 ```
 
 ```{r, out.width='20%', echo=FALSE}
@@ -170,30 +172,116 @@ combined_data <- do.call(rbind, lapply(csv_files, function(file) {
   read.csv(file, sep = ",", stringsAsFactors = FALSE)
 }))
 
+# Saco los datos unicos por año y tipo de cultivo
 unique_crops <- unique(combined_data$Crop)
 unique_year <- unique(combined_data$Crop_Year)
- 
+
+# Saco el promedio del rendimiento por año de un tipo de cultivo 
 average_yield <- aggregate(Rendimiento ~ Crop + Crop_Year, data = combined_data, FUN = mean)
 
-ggplot(data = average_yield, aes(x = Crop_Year, y = Rendimiento, color = Crop, group = Crop)) +
-  geom_line(size = 1) +
-  geom_point(size = 2) +
-  labs(title = "Promedio de Rendimiento por Cultivo y Año",
-       x = "Año",
-       y = "Rendimiento",
-       color = "Cultivo") +
-  theme_minimal() +
-  theme(legend.position = "none")
+top_crops_per_year <- average_yield %>%
+  group_by(Crop_Year) %>%
+  arrange(desc(Rendimiento)) %>%
+  slice_head(n = 10) %>%
+  ungroup()
 
-ggplot(data = average_yield, aes(x = Crop_Year, y = Rendimiento, color = Crop, group = Crop)) +
-  geom_line(size = 1) +
-  geom_point(size = 2) +
-  labs(title = "Promedio de Rendimiento por Cultivo y Año",
+# Ver los resultados
+
+# Filtrar los datos para el primer año
+first_year_data <- top_crops_per_year %>%
+  filter(Crop_Year == 2009)
+
+
+top_crops <- unique(top_crops_per_year$Crop)
+
+# Filtrar el promedio de rendimiento solo para los cultivos principales
+top_crops_data <- average_yield %>%
+  filter(Crop %in% top_crops)
+
+# Crear el gráfico
+ggplot(data = top_crops_data, aes(x = Crop_Year, y = Rendimiento, color = Crop, group = Crop)) +
+  geom_line(linewidth  = 1) +  # Línea para cada cultivo
+  geom_point(size = 2) + # Puntos en la línea
+  labs(title = "Rendimiento Promedio de los 10 Principales Cultivos por Año",
        x = "Año",
-       y = "Rendimiento",
+       y = "Rendimiento Promedio",
        color = "Cultivo") +
   theme_minimal() +
   theme(legend.position = "bottom")
 ```
 
+<p>
+Este gráfico muestra el "Rendimiento Promedio de los 10 Principales Cultivos por Año" en India, donde el rendimiento se calcula como la relación entre el área cultivada y la producción total (rendimiento = producción / área). Esta métrica nos da una idea de la productividad de cada cultivo, es decir, qué tan eficiente es cada cultivo en términos de producción por unidad de área.
+</p>
+
+<p>
+A lo largo de los años, observamos una notable variación en el rendimiento promedio de los cultivos. En particular, el coco (representado en color amarillo en el gráfico) destaca de manera significativa en comparación con otros cultivos, manteniendo consistentemente altos niveles de rendimiento. Esto sugiere que el coco es una de las principales fuentes de productividad agrícola en India y, de hecho, constituye una de sus principales exportaciones agrícolas.
+</p>
+
+<p>
+En contraste, otros cultivos muestran rendimientos más bajos en comparación al coco, lo que resalta la especialización de India en la producción de coco debido a sus condiciones agroclimáticas y técnicas de cultivo eficientes. Además, se observa que en 2010 hubo un pico en la línea rosa de otro cultivo, aunque se trata de un fenómeno aislado en comparación con la tendencia constante del rendimiento del coco.
+</p>
+
+# Análisis de la Variabilidad del Rendimiento de Cereal y Leche
+A continuación, se presenta un análisis de la variabilidad del rendimiento de cereal y leche en India a lo largo de los años, basado en un gráfico de caja (boxplot) que muestra el rendimiento promedio anual entre 1997 y 2014.
+
+```{r, out.width='100%', echo=FALSE}
+coconut_data <- combined_data %>%
+  filter(Crop == "Other Cereals & Millets" & is.finite(Rendimiento))
+
+# Crear el gráfico de cajas
+ggplot(data = coconut_data, aes(x = as.factor(Crop_Year), y = Rendimiento)) +
+  geom_boxplot(fill = "lightblue", color = "black") +
+  labs(title = "Variabilidad del Rendimiento del Cereal y Leche por Año",
+       x = "Año",
+       y = "Rendimiento",
+       color = "Cultivo") +
+  theme_minimal()
+```
+
+El gráfico de caja muestra la distribución del rendimiento de cereal y leche para cada año. La caja de cada año representa la mediana, el rango intercuartílico y los valores atípicos, los cuales corresponden a puntos de rendimiento inusualmente altos o bajos.
+
+- Año 2004: En este año, la mediana del rendimiento de cereal y leche es relativamente 
+
+
 \newpage
+
+```{r, out.width='100%', echo=FALSE}
+
+sugarcane_data <- combined_data %>%
+  filter(Crop == "Sugarcane" & Crop_Year >= 2010 & Crop_Year <= 2015)
+
+# Calcular el promedio de rendimiento y producción por estado
+average_metrics_by_state <- sugarcane_data %>%
+  group_by(State_Name) %>%
+  summarise(Average_Rendimiento = mean(Rendimiento, na.rm = TRUE),
+            Average_Production = mean(Production, na.rm = TRUE)) %>%
+  arrange(desc(Average_Rendimiento))
+
+# Seleccionar los 15 estados con el mayor rendimiento promedio
+top_15_states_metrics <- average_metrics_by_state %>%
+  slice_head(n = 15)
+
+# Reestructurar los datos en formato largo para el gráfico combinado
+top_15_states_long <- top_15_states_metrics %>%
+  pivot_longer(cols = c("Average_Rendimiento", "Average_Production"),
+               names_to = "Metric",
+               values_to = "Value")
+
+# Crear el gráfico combinado
+ggplot(data = top_15_states_long, aes(x = reorder(State_Name, Value), y = Value, fill = Metric)) +
+  geom_bar(stat = "identity", position = "dodge", color = "black") +
+  scale_fill_manual(values = c("Average_Rendimiento" = "skyblue", "Average_Production" = "lightgreen"),
+                    labels = c("Rendimiento Promedio", "Producción Promedio")) +
+  labs(title = "Top 15 Estados con Mayor Rendimiento y Producción Promedio de Sugarcane (2010-2015)",
+       x = "Estado",
+       y = "Promedio",
+       fill = "Métrica") +
+  coord_flip() +  # Voltear el gráfico para facilitar la lectura de los nombres
+  theme_minimal()
+```
+
+
+\newpage
+<a href="https://www.business-standard.com/article/markets/sugarcane-area-poised-to-rise-by-8-10-in-2011-12-111052600014_1.html">primer Link</a>
+<a href="https://apps.fas.usda.gov/newgainapi/api/report/downloadreportbyfilename?filename=Sugar%20Annual_New%20Delhi_India_4-14-2011.pdf">segundo link</a>

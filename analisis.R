@@ -54,13 +54,180 @@ unique_year <- unique(combined_data$Crop_Year)
 # Saco el promedio del rendimiento por año de un tipo de cultivo 
 average_yield <- aggregate(Rendimiento ~ Crop + Crop_Year, data = combined_data, FUN = mean)
 
+top_crops_per_year <- average_yield %>%
+  group_by(Crop_Year) %>%
+  arrange(desc(Rendimiento)) %>%
+  slice_head(n = 10) %>%
+  ungroup()
 
-ggplot(data = average_yield, aes(x = Crop_Year, y = Rendimiento, color = Crop, group = Crop)) +
-  geom_line(size = 1) +
-  geom_point(size = 2) +
-  labs(title = "Promedio de Rendimiento por Cultivo y Ano",
+# Ver los resultados
+head(top_crops_per_year, n = 11)
+
+
+top_crops <- unique(top_crops_per_year$Crop)
+
+# Filtrar el promedio de rendimiento solo para los cultivos principales
+top_crops_data <- average_yield %>%
+  filter(Crop %in% top_crops)
+
+# Crear el gráfico
+ggplot(data = top_crops_data, aes(x = Crop_Year, y = Rendimiento, color = Crop, group = Crop)) +
+  geom_line(size = 1) +  # Línea para cada cultivo
+  geom_point(size = 2) + # Puntos en la línea
+  labs(title = "Rendimiento Promedio de los 10 Principales Cultivos por Año",
+       x = "Año",
+       y = "Rendimiento Promedio",
+       color = "Cultivo") +
+  theme_minimal()
+
+
+# Grafico auxiliar
+coconut_data <- average_yield %>%
+  filter(Crop == "Other Cereals & Millets")
+
+head(coconut_data)
+
+# Crear el gráfico
+ggplot(data = coconut_data, aes(x = Crop_Year, y = Rendimiento)) +
+  geom_line(size = 1, color = "green") +  # Línea verde para el rendimiento
+  geom_point(size = 3, color = "green") + # Puntos en la línea
+  labs(title = "Rendimiento del Cultivo de Coconut por Año",
+       x = "Año",
+       y = "Rendimiento Promedio") +
+  theme_minimal()
+
+# Segundo Grafico
+
+sugarcane_data <- combined_data %>%
+  filter(Crop == "Sugarcane" & Crop_Year >= 2010 & Crop_Year <= 2015)
+
+# Calcular el promedio de rendimiento por estado
+average_yield_by_state <- sugarcane_data %>%
+  group_by(State_Name) %>%
+  summarise(Average_Rendimiento = mean(Rendimiento, na.rm = TRUE)) %>%
+  arrange(desc(Average_Rendimiento))
+
+# Seleccionar los 10 estados con el mayor rendimiento promedio
+top_10_states <- average_yield_by_state %>%
+  slice_head(n = 15)
+
+ggplot(data = top_10_states, aes(x = reorder(State_Name, Average_Rendimiento), y = Average_Rendimiento)) +
+  geom_bar(stat = "identity", fill = "skyblue", color = "black") +
+  labs(title = "Top 15 Estados con Mayor Rendimiento Promedio de Sugarcane (2010-2015)",
+       x = "Estado",
+       y = "Rendimiento Promedio") +
+  coord_flip() +  # Voltear el gráfico para facilitar la lectura de los nombres
+  theme_minimal()
+
+
+
+
+####
+
+
+sugarcane_data <- combined_data %>%
+  filter(Crop == "Sugarcane" & Crop_Year >= 2010 & Crop_Year <= 2015)
+
+# Calcular el promedio de producción por estado
+average_production_by_state <- sugarcane_data %>%
+  group_by(State_Name) %>%
+  summarise(Average_Production = mean(Production, na.rm = TRUE)) %>%
+  arrange(desc(Average_Production))
+
+# Seleccionar los 15 estados con la mayor producción promedio
+top_15_states_production <- average_production_by_state %>%
+  slice_head(n = 15)
+
+# Crear el gráfico de barras para la producción promedio
+ggplot(data = top_15_states_production, aes(x = reorder(State_Name, Average_Production), y = Average_Production)) +
+  geom_bar(stat = "identity", fill = "lightgreen", color = "black") +
+  labs(title = "Top 15 Estados con Mayor Producción Promedio de Sugarcane (2010-2011)",
+       x = "Estado",
+       y = "Producción Promedio") +
+  coord_flip() +  # Voltear el gráfico para facilitar la lectura de los nombres
+  theme_minimal()
+
+
+
+##########
+
+
+# Filtrar los datos de "Sugarcane" entre los años 2010 y 2015
+sugarcane_data <- combined_data %>%
+  filter(Crop == "Sugarcane" & Crop_Year >= 2010 & Crop_Year <= 2015)
+
+# Calcular el promedio de rendimiento y producción por estado
+average_metrics_by_state <- sugarcane_data %>%
+  group_by(State_Name) %>%
+  summarise(Average_Rendimiento = mean(Rendimiento, na.rm = TRUE),
+            Average_Production = mean(Production, na.rm = TRUE)) %>%
+  arrange(desc(Average_Rendimiento))
+
+# Seleccionar los 15 estados con el mayor rendimiento promedio
+top_15_states_metrics <- average_metrics_by_state %>%
+  slice_head(n = 15)
+
+# Reestructurar los datos en formato largo para el gráfico combinado
+top_15_states_long <- top_15_states_metrics %>%
+  pivot_longer(cols = c("Average_Rendimiento", "Average_Production"),
+               names_to = "Metric",
+               values_to = "Value")
+
+# Crear el gráfico combinado
+ggplot(data = top_15_states_long, aes(x = reorder(State_Name, Value), y = Value, fill = Metric)) +
+  geom_bar(stat = "identity", position = "dodge", color = "black") +
+  scale_fill_manual(values = c("Average_Rendimiento" = "skyblue", "Average_Production" = "lightgreen"),
+                    labels = c("Rendimiento Promedio", "Producción Promedio")) +
+  labs(title = "Top 15 Estados con Mayor Rendimiento y Producción Promedio de Sugarcane (2010-2015)",
+       x = "Estado",
+       y = "Promedio",
+       fill = "Métrica") +
+  coord_flip() +  # Voltear el gráfico para facilitar la lectura de los nombres
+  theme_minimal()
+
+####### 
+
+coconut_data <- combined_data %>%
+  filter(Crop == "Other Cereals & Millets")
+
+# Crear el gráfico de cajas
+ggplot(data = coconut_data, aes(x = as.factor(Crop_Year), y = Rendimiento)) +
+  geom_boxplot(fill = "lightblue", color = "black") +
+  labs(title = "Variabilidad del Rendimiento de Coconut por Ano",
        x = "Ano",
        y = "Rendimiento",
        color = "Cultivo") +
-  theme_minimal() +
-  theme(legend.position = "none")
+  theme_minimal()
+
+
+
+###################### GRAFICOS DE PRODUCION
+
+average_production <- aggregate(Production ~ Crop + Crop_Year, data = combined_data, FUN = mean)
+
+top_crops_per_year_production <- average_production %>%
+  group_by(Crop_Year) %>%
+  arrange(desc(Production)) %>%
+  slice_head(n = 20) %>%
+  ungroup()
+
+# Ver los resultados
+head(top_crops_per_year_production, n = 11)
+
+top_crops_production <- unique(top_crops_per_year_production$Crop)
+
+# Filtrar el promedio de producción solo para los cultivos principales
+top_crops_data_production <- average_production %>%
+  filter(Crop %in% top_crops_production)
+
+head(top_crops_data_production,n=30)
+
+# Crear el gráfico
+ggplot(data = top_crops_data_production, aes(x = Crop_Year, y = Production, color = Crop, group = Crop)) +
+  geom_line(size = 1) +  # Línea para cada cultivo
+  geom_point(size = 2) + # Puntos en la línea
+  labs(title = "Producción Promedio de los 10 Principales Cultivos por Ano",
+       x = "Ano",
+       y = "Producción Promedio",
+       color = "Cultivo") +
+  theme_minimal()
