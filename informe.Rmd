@@ -162,7 +162,7 @@ Ahora contamos con un conjunto de datos más preciso, lo que nos permite incorpo
 
 # Resultados De La Investigación 
 
-```{r, out.width='100%', echo=FALSE}
+```{r, out.width='95%', echo=FALSE}
 
 csv_directory <- "Investigacion"
 
@@ -171,6 +171,54 @@ csv_files <- list.files(path = csv_directory, pattern = "\\.csv$", full.names = 
 combined_data <- do.call(rbind, lapply(csv_files, function(file) {
   read.csv(file, sep = ",", stringsAsFactors = FALSE)
 }))
+
+combined_data_ <- combined_data %>%
+  filter(Crop != "Coconut ")
+
+average_production <- aggregate(Production ~ Crop + Crop_Year, data = combined_data_, FUN = mean)
+
+# Seleccionar los 10 cultivos principales por año basados en la producción
+top_crops_per_year_production <- average_production %>%
+  group_by(Crop_Year) %>%
+  arrange(desc(Production)) %>%
+  slice_head(n = 10) %>%
+  ungroup()
+
+# Obtener los cultivos principales únicos
+top_crops <- unique(top_crops_per_year_production$Crop)
+
+# Filtrar los datos para incluir solo los cultivos principales en el promedio de producción
+top_crops_data_production <- average_production %>%
+  filter(Crop %in% top_crops)
+
+# Crear el gráfico para la producción
+ggplot(data = top_crops_data_production, aes(x = Crop_Year, y = Production, color = Crop, group = Crop)) +
+  geom_line(linewidth = 1) +  # Línea para cada cultivo
+  geom_point(size = 2) +      # Puntos en la línea
+  labs(title = "Producción Promedio de los 10 Principales Cultivos por Año",
+       x = "Año",
+       y = "Producción Promedio",
+       color = "Cultivo") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+<p>
+En este gráfico se observa la producción promedio anual de los principales cultivos en India desde el año 2000 hasta 2015. La caña de azúcar destaca como uno de los cultivos de mayor producción en la última década. Aunque se observa una caída pronunciada de su producción en el inicio del período estudiado, mantuvo una tendencia estable en los años posteriores, incluso logrando incrementos en ciertos puntos. Este desempeño ha permitido a India consolidarse entre los cinco principales productores de caña de azúcar a nivel mundial.
+</p>
+
+<p>
+El trigo y el arroz también figuran como cultivos esenciales, con niveles de producción constantes a lo largo del tiempo, contribuyendo significativamente a la producción de cereales en el país. La producción de trigo en India ha permitido que en 2022 el país se posicione como el décimo exportador más grande de trigo y otros cereales mezclados, alcanzando exportaciones por un valor de $2.32 mil millones.
+
+
+</p>
+
+<p>
+Cabe mencionar que, para mejorar la claridad del análisis, se excluyó el cultivo de coco, ya que su alta producción distorsionaba los datos, dificultando una interpretación detallada y equilibrada de los otros cultivos incluidos en el estudio.
+</p>
+
+
+```{r, out.width='100%', echo=FALSE}
 
 # Saco los datos unicos por año y tipo de cultivo
 unique_crops <- unique(combined_data$Crop)
@@ -186,11 +234,6 @@ top_crops_per_year <- average_yield %>%
   ungroup()
 
 # Ver los resultados
-
-# Filtrar los datos para el primer año
-first_year_data <- top_crops_per_year %>%
-  filter(Crop_Year == 2009)
-
 
 top_crops <- unique(top_crops_per_year$Crop)
 
@@ -215,19 +258,18 @@ Este gráfico muestra el "Rendimiento Promedio de los 10 Principales Cultivos po
 </p>
 
 <p>
-A lo largo de los años, observamos una notable variación en el rendimiento promedio de los cultivos. En particular, el coco (representado en color amarillo en el gráfico) destaca de manera significativa en comparación con otros cultivos, manteniendo consistentemente altos niveles de rendimiento. Esto sugiere que el coco es una de las principales fuentes de productividad agrícola en India y, de hecho, constituye una de sus principales exportaciones agrícolas.
+En contraste, otros cultivos muestran rendimientos considerablemente más bajos en comparación con el coco, lo que destaca la especialización de India en su producción, apoyada en condiciones agroclimáticas favorables y técnicas de cultivo eficientes. India es, de hecho, el mayor productor de coco a nivel mundial, con una producción de 19.247 millones de frutos en 2021-22, lo que representa el 31,45% de la producción global. Esta capacidad productiva le permite mantener un mercado interno robusto y, además, comenzar a ganar terreno en mercados internacionales.
 </p>
 
 <p>
-En contraste, otros cultivos muestran rendimientos más bajos en comparación al coco, lo que resalta la especialización de India en la producción de coco debido a sus condiciones agroclimáticas y técnicas de cultivo eficientes. Además, se observa que en 2010 hubo un pico en la línea rosa de otro cultivo, aunque se trata de un fenómeno aislado en comparación con la tendencia constante del rendimiento del coco.
+Es importante señalar que es probable que los datos consideren cada coco como una unidad individual, mientras que otros cultivos, como el trigo, podrían medirse en bultos o toneladas. Esta diferencia en las unidades de medición podría contribuir a la alta cifra reportada para el coco, lo que sugiere una posible discrepancia en el volumen aparente de producción en comparación con otros cultivos.
 </p>
+\newpage
 
 # Análisis de la Variabilidad del Rendimiento de Cereal y Leche
-A continuación, se presenta un análisis de la variabilidad del rendimiento de cereal y leche en India a lo largo de los años, basado en un gráfico de caja (boxplot) que muestra el rendimiento promedio anual entre 1997 y 2014.
-
 ```{r, out.width='100%', echo=FALSE}
 coconut_data <- combined_data %>%
-  filter(Crop == "Other Cereals & Millets" & is.finite(Rendimiento))
+  filter(Crop == "Coconut " & !is.na(Rendimiento) & is.finite(Rendimiento))
 
 # Crear el gráfico de cajas
 ggplot(data = coconut_data, aes(x = as.factor(Crop_Year), y = Rendimiento)) +
@@ -239,49 +281,35 @@ ggplot(data = coconut_data, aes(x = as.factor(Crop_Year), y = Rendimiento)) +
   theme_minimal()
 ```
 
-El gráfico de caja muestra la distribución del rendimiento de cereal y leche para cada año. La caja de cada año representa la mediana, el rango intercuartílico y los valores atípicos, los cuales corresponden a puntos de rendimiento inusualmente altos o bajos.
+El gráfico de caja muestra la distribución del rendimiento del coco para cada año. La caja de cada año representa la mediana, el rango intercuartílico y los valores atípicos, los cuales corresponden a puntos de rendimiento inusualmente altos o bajos.
 
-- Año 2004: En este año, la mediana del rendimiento de cereal y leche es relativamente 
+- Año 2006: La mediana del rendimiento está notablemente por debajo de las 10,000 unidades, indicando que la mayoría de los rendimientos fueron bajos. Sin embargo, hay varios valores atípicos que alcanzan cerca de 40,000 unidades, lo que sugiere que algunos cultivos o regiones tuvieron un rendimiento excepcionalmente alto. La distribución es aproximadamente simétrica, mostrando un equilibrio en ambos lados de la mediana.
+
+- Año 2011: En este año, se observa una ligera asimetría positiva, con la mayoría de los rendimientos concentrados en niveles altos (cercanos o superiores a 10,000). Esto sugiere un aumento general en la productividad del coco en comparación con los años anteriores.
+
+- Año 2014: Este año presenta una gran variabilidad en los rendimientos, con la mayor parte de los valores en niveles altos. La distribución es asimétrica y muestra una tendencia hacia rendimientos elevados, con más del 50% de los datos en niveles altos, aunque algunos valores atípicos sobresalen en la parte baja del rango.
+
+\newpage
+
+# Conclusion
+
+La investigación sobre la producción de cultivos en India muestra una perspectiva compleja y dinámica de la agricultura en uno de los principales productores agrícolas del mundo. Los datos indican que cultivos como la caña de azúcar, el trigo, el arroz y el coco destacan por su alta producción y su impacto económico, tanto a nivel nacional como en mercados globales.
+
+La caña de azúcar ha demostrado ser un cultivo fundamental en la agricultura india, con una producción estable y una importancia económica considerable. Esta estabilidad en la producción posiciona a India entre los cinco principales productores de caña de azúcar a nivel mundial, con un sector que sigue creciendo y adaptándose a las demandas tanto internas como de exportación. Sin embargo, este crecimiento presenta desafíos, ya que la industria enfrenta problemas de sostenibilidad y bienestar de los trabajadores, lo que sugiere la necesidad de políticas que equilibren el éxito económico con el desarrollo social y la equidad laboral.
+
+En cuanto al coco, India se destaca como el mayor productor mundial, con un rendimiento notablemente alto en comparación con otros cultivos. Esto se debe a condiciones agroclimáticas favorables y a técnicas de cultivo optimizadas. Sin embargo, el análisis también revela posibles inconsistencias en la interpretación de los datos de producción, ya que las unidades de medición pueden variar entre cultivos, afectando la percepción de volumen de producción.
+
+La investigación también subraya la importancia de desarrollar modelos predictivos que puedan anticipar fluctuaciones en la producción debido a factores como el cambio climático, las políticas agrícolas y las plagas. Estos modelos permitirían una planificación más eficiente y una mejor toma de decisiones para mitigar riesgos en la seguridad alimentaria del país.
+
+En conclusión, India posee una capacidad agrícola robusta y diversificada, con cultivos que aportan significativamente a la economía y a la seguridad alimentaria mundial. No obstante, el país enfrenta desafíos que requieren una gestión sostenible de los recursos y políticas inclusivas para asegurar que el sector agrícola pueda seguir siendo un pilar de crecimiento y estabilidad en el largo plazo.
+
 
 
 \newpage
 
-```{r, out.width='100%', echo=FALSE}
-
-sugarcane_data <- combined_data %>%
-  filter(Crop == "Sugarcane" & Crop_Year >= 2010 & Crop_Year <= 2015)
-
-# Calcular el promedio de rendimiento y producción por estado
-average_metrics_by_state <- sugarcane_data %>%
-  group_by(State_Name) %>%
-  summarise(Average_Rendimiento = mean(Rendimiento, na.rm = TRUE),
-            Average_Production = mean(Production, na.rm = TRUE)) %>%
-  arrange(desc(Average_Rendimiento))
-
-# Seleccionar los 15 estados con el mayor rendimiento promedio
-top_15_states_metrics <- average_metrics_by_state %>%
-  slice_head(n = 15)
-
-# Reestructurar los datos en formato largo para el gráfico combinado
-top_15_states_long <- top_15_states_metrics %>%
-  pivot_longer(cols = c("Average_Rendimiento", "Average_Production"),
-               names_to = "Metric",
-               values_to = "Value")
-
-# Crear el gráfico combinado
-ggplot(data = top_15_states_long, aes(x = reorder(State_Name, Value), y = Value, fill = Metric)) +
-  geom_bar(stat = "identity", position = "dodge", color = "black") +
-  scale_fill_manual(values = c("Average_Rendimiento" = "skyblue", "Average_Production" = "lightgreen"),
-                    labels = c("Rendimiento Promedio", "Producción Promedio")) +
-  labs(title = "Top 15 Estados con Mayor Rendimiento y Producción Promedio de Sugarcane (2010-2015)",
-       x = "Estado",
-       y = "Promedio",
-       fill = "Métrica") +
-  coord_flip() +  # Voltear el gráfico para facilitar la lectura de los nombres
-  theme_minimal()
-```
-
-
-\newpage
-<a href="https://www.business-standard.com/article/markets/sugarcane-area-poised-to-rise-by-8-10-in-2011-12-111052600014_1.html">primer Link</a>
-<a href="https://apps.fas.usda.gov/newgainapi/api/report/downloadreportbyfilename?filename=Sugar%20Annual_New%20Delhi_India_4-14-2011.pdf">segundo link</a>
+# Referencias
+"Crop Production Data India" en Kaggle. https://www.kaggle.com/datasets/iamtapendu/crop-production-data-india
+"Sugarcane Area Poised to Rise by 8-10% in 2011-12" en Business Standard. https://www.business-standard.com/article/markets/sugarcane-area-poised-to-rise-by-8-10-in-2011-12-111052600014_1.html
+"Sugar Annual Report - New Delhi, India" del USDA Foreign Agricultural Service. https://apps.fas.usda.gov/newgainapi/api/report/downloadreportbyfilename?filename=Sugar%20Annual_New%20Delhi_India_4-14-2011.pdf
+"India: El éxito de la industria de la caña de azúcar sacrifica el bienestar de los trabajadores" en France24. https://www.france24.com/es/programas/en-foco/20230707-india-el-%C3%A9xito-de-la-industria-de-la-ca%C3%B1a-de-az%C3%BAcar-sacrfica-el-bienestar-de-los-trabajadores
+"Top 10 de países productores de caña de azúcar en 2023-2024" en Tecnicana. https://tecnicana.org/2024/04/26/mercados/top-10-de-paises-productores-de-cana-de-azucar-en-2023-2024/?v=42983b05e2f2

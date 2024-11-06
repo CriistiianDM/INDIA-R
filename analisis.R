@@ -231,3 +231,67 @@ ggplot(data = top_crops_data_production, aes(x = Crop_Year, y = Production, colo
        y = "Producción Promedio",
        color = "Cultivo") +
   theme_minimal()
+
+
+
+#################################################################
+
+combined_data <- combined_data %>%
+  filter(Crop != "Coconut ")
+
+average_production <- aggregate(Production ~ Crop + Crop_Year, data = combined_data, FUN = mean)
+
+# Seleccionar los 10 cultivos principales por año basados en la producción
+top_crops_per_year_production <- average_production %>%
+  group_by(Crop_Year) %>%
+  arrange(desc(Production)) %>%
+  slice_head(n = 10) %>%
+  ungroup()
+
+# Obtener los cultivos principales únicos
+top_crops <- unique(top_crops_per_year_production$Crop)
+
+# Filtrar los datos para incluir solo los cultivos principales en el promedio de producción
+top_crops_data_production <- average_production %>%
+  filter(Crop %in% top_crops)
+
+# Crear el gráfico para la producción
+ggplot(data = top_crops_data_production, aes(x = Crop_Year, y = Production, color = Crop, group = Crop)) +
+  geom_line(linewidth = 1) +  # Línea para cada cultivo
+  geom_point(size = 2) +      # Puntos en la línea
+  labs(title = "Producción Promedio de los 10 Principales Cultivos por Año",
+       x = "Año",
+       y = "Producción Promedio",
+       color = "Cultivo") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+
+
+############### 
+coconut_data <- combined_data %>%
+  filter(Crop == "Other Cereals & Millets" & !is.na(Production) & is.finite(Production))
+
+# Verifica si quedan datos después del filtro
+print(nrow(coconut_data))
+
+# Crear el gráfico de cajas de producción
+ggplot(data = coconut_data, aes(x = as.factor(Crop_Year), y = Production)) +
+  geom_boxplot(fill = "lightblue", color = "black") +
+  labs(title = "Variabilidad de la Producción del Cereal y Leche por Ano",
+       x = "Ano",
+       y = "Produccion",
+       color = "Cultivo") +
+  theme_minimal()
+
+
+coconut_data <- combined_data %>%
+  filter(Crop == "Coconut " & !is.na(Rendimiento) & is.finite(Rendimiento))
+
+# Crear el gráfico de cajas
+ggplot(data = coconut_data, aes(x = as.factor(Crop_Year), y = Rendimiento)) +
+  geom_boxplot(fill = "lightblue", color = "black") +
+  labs(title = "Variabilidad del Rendimiento del Cereal y Leche por Ano",
+       x = "Ano",
+       y = "Rendimiento",
+       color = "Cultivo") +
+  theme_minimal()
