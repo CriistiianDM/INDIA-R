@@ -308,8 +308,8 @@ En conclusión, India posee una capacidad agrícola robusta y diversificada, con
 \newpage
 
 # Referencias
-"Crop Production Data India" en Kaggle. https://www.kaggle.com/datasets/iamtapendu/crop-production-data-india
-"Sugarcane Area Poised to Rise by 8-10% in 2011-12" en Business Standard. https://www.business-standard.com/article/markets/sugarcane-area-poised-to-rise-by-8-10-in-2011-12-111052600014_1.html
-"Sugar Annual Report - New Delhi, India" del USDA Foreign Agricultural Service. https://apps.fas.usda.gov/newgainapi/api/report/downloadreportbyfilename?filename=Sugar%20Annual_New%20Delhi_India_4-14-2011.pdf
-"India: El éxito de la industria de la caña de azúcar sacrifica el bienestar de los trabajadores" en France24. https://www.france24.com/es/programas/en-foco/20230707-india-el-%C3%A9xito-de-la-industria-de-la-ca%C3%B1a-de-az%C3%BAcar-sacrfica-el-bienestar-de-los-trabajadores
-"Top 10 de países productores de caña de azúcar en 2023-2024" en Tecnicana. https://tecnicana.org/2024/04/26/mercados/top-10-de-paises-productores-de-cana-de-azucar-en-2023-2024/?v=42983b05e2f2
+- "Crop Production Data India" en Kaggle. https://www.kaggle.com/datasets/iamtapendu/crop-production-data-india
+- "Sugarcane Area Poised to Rise by 8-10% in 2011-12" en Business Standard. https://www.business-standard.com/article/markets/sugarcane-area-poised-to-rise-by-8-10-in-2011-12-111052600014_1.html
+- "Sugar Annual Report - New Delhi, India" del USDA Foreign Agricultural Service. https://apps.fas.usda.gov/newgainapi/api/report/downloadreportbyfilename?filename=Sugar%20Annual_New%20Delhi_India_4-14-2011.pdf
+- "India: El éxito de la industria de la caña de azúcar sacrifica el bienestar de los trabajadores" en France24. https://www.france24.com/es/programas/en-foco/20230707-india-el-%C3%A9xito-de-la-industria-de-la-ca%C3%B1a-de-az%C3%BAcar-sacrfica-el-bienestar-de-los-trabajadores
+- "Top 10 de países productores de caña de azúcar en 2023-2024" en Tecnicana. https://tecnicana.org/2024/04/26/mercados/top-10-de-paises-productores-de-cana-de-azucar-en-2023-2024/?v=42983b05e2f2

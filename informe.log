@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.19)  6 NOV 2024 01:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.19)  6 NOV 2024 01:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -584,46 +584,36 @@ Package fancyhdr Warning: \headheight is too small (40.0pt):
 
 [12]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 480.
+(Font)              <10> on input line 483.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 480.
+(Font)              <7> on input line 483.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 480.
+(Font)              <5> on input line 483.
 
-Underfull \hbox (badness 4954) in paragraph at lines 479--493
-\T1/lmr/m/n/10 ``Crop Pro-duc-tion Data In-dia'' en Kag-gle. []$https : / / www . kaggle . com / datasets / iamtapendu / crop -[]
+Underfull \hbox (badness 10000) in paragraph at lines 485--489
+\T1/lmr/m/n/10 standard . com / article / markets / sugarcane -[] area -[] poised -[] to -[] rise -[] by -[] 8 -[] 10 -[] in -[] 2011 -[] 12 -[] 111052600014 _ 1 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 479--493
-[]$\T1/lmr/m/n/10 https : / / www . business -[] standard . com / article / markets / sugarcane -[] area -[] poised -[] to -[] rise -[] by -[] 8 -[] 10 -[] in -[] 2011 -[] 12 -[]
+Underfull \hbox (badness 10000) in paragraph at lines 489--493
+\T1/lmr/m/n/10 / / apps . fas . usda . gov / newgainapi / api / report / downloadreportby^^\lename ? ^^\lename = Sugar % 20Annual _
  []
 
 
-Underfull \hbox (badness 1242) in paragraph at lines 479--493
-\T1/lmr/m/n/10 111052600014 _ 1 . html$[] ``Sugar An-nual Re-port - New Delhi, In-dia'' del USDA For-eign Agri-cul-tural
+Underfull \hbox (badness 1622) in paragraph at lines 497--500
+[]\T1/lmr/m/n/10 ``Top 10 de países pro-duc-tores de caña de azú-car en 2023-2024'' en Tec-ni-cana. []$https : / /
  []
 
 
-Underfull \hbox (badness 2503) in paragraph at lines 479--493
-\T1/lmr/m/n/10 Ser-vice. []$https : / / apps . fas . usda . gov / newgainapi / api / report / downloadreportby^^\lename ? ^^\lename = Sugar %
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 479--493
-\T1/lmr/m/n/10 foco / 20230707 -[] india -[] el -[] %C3 % A9xito -[] de -[] la -[] industria -[] de -[] la -[] ca % C3 % B1a -[] de -[] az % C3 % BAcar -[] sacr^^\ca -[] el -[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 479--493
-[]$\T1/lmr/m/n/10 https : / / tecnicana . org / 2024 / 04 / 26 / mercados / top -[] 10 -[] de -[] paises -[] productores -[] de -[] cana -[] de -[] azucar -[] en -[] 2023 -[]
+Underfull \hbox (badness 10000) in paragraph at lines 497--500
+\T1/lmr/m/n/10 tecnicana . org / 2024 / 04 / 26 / mercados / top -[] 10 -[] de -[] paises -[] productores -[] de -[] cana -[] de -[] azucar -[] en -[] 2023 -[]
  []
 
 
 
 File: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg Graphic file (type jpg)
 <use C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg>
-Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 494.
+Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 502.
 (pdftex.def)             Requested size: 56.90189pt x 49.84428pt.
 
 Package fancyhdr Warning: \headheight is too small (40.0pt): 
@@ -641,16 +631,16 @@ L3 programming layer <2024-08-30>
 Here is how much of TeX's memory you used:
  11375 strings out of 475539
  177806 string characters out of 5775724
- 571230 words of memory out of 5000000
+ 572230 words of memory out of 5000000
  33808 multiletter control sequences out of 15000+600000
  607507 words of font info for 77 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  89i,16n,93p,796b,514s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmro10.pfb>
-Output written on informe.pdf (13 pages, 265485 bytes).
+Output written on informe.pdf (13 pages, 265613 bytes).
 PDF statistics:
- 227 PDF objects out of 1000 (max. 8388607)
- 190 compressed objects within 2 object streams
+ 229 PDF objects out of 1000 (max. 8388607)
+ 192 compressed objects within 2 object streams
  41 named destinations out of 1000 (max. 500000)
  181 words of extra memory for PDF output out of 10000 (max. 10000000)
 
