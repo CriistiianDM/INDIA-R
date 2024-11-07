@@ -88,13 +88,16 @@ header-includes:
 
 ## Objetivo Principal
 
-Desarrollar modelos predictivos que ayuden a anticipar futuros niveles de producción y detectar riesgos potenciales en la producción de alimentos en India, aplicando técnicas de series de tiempo y otras herramientas estadísticas, con el fin de predecir el comportamiento de la producción alimentaria en los próximos tres años y su impacto en la economía global.
+Desarrollar una metodología de análisis predictivo de producción agrícola en India, integrando datos históricos y factores externos relevantes, con el propósito de anticipar los niveles de producción a mediano plazo y generar información útil para la toma de decisiones en la gestión de riesgos en el sector agrícola.
 
 ## Objetivos Específicos
 
-- Recopilar y analizar datos históricos de producción agrícola en India para identificar tendencias, patrones estacionales y fluctuaciones en la producción de diversos alimentos a lo largo del tiempo.
+- Recopilar y analizar datos históricos de producción agrícola en India, así como identificar los factores externos (clima, políticas, mercado) que impactan en el rendimiento de los cultivos.
 
-- Identificar y evaluar los riesgos potenciales que podrían afectar la producción de alimentos, como cambios climáticos, plagas, y políticas gubernamentales, y desarrollar estrategias para mitigar estos riesgos en función de las proyecciones obtenidas de los modelos predictivos.
+- Aplicar técnicas de análisis estadístico y de series de tiempo para establecer patrones y tendencias en los datos de producción, identificando los principales indicadores que afectan su comportamiento.
+
+- Diseñar y evaluar una metodología que permita generar predicciones sobre la producción agrícola a mediano plazo, y elaborar recomendaciones estratégicas para la gestión de riesgos en el sector agrícola en función de estos resultados.
+
 
 \newpage
 
@@ -266,7 +269,7 @@ Es importante señalar que es probable que los datos consideren cada coco como u
 </p>
 \newpage
 
-# Análisis de la Variabilidad del Rendimiento de Cereal y Leche
+# Análisis de la Variabilidad del Rendimiento del coco
 ```{r, out.width='100%', echo=FALSE}
 coconut_data <- combined_data %>%
   filter(Crop == "Coconut " & !is.na(Rendimiento) & is.finite(Rendimiento))
@@ -274,7 +277,7 @@ coconut_data <- combined_data %>%
 # Crear el gráfico de cajas
 ggplot(data = coconut_data, aes(x = as.factor(Crop_Year), y = Rendimiento)) +
   geom_boxplot(fill = "lightblue", color = "black") +
-  labs(title = "Variabilidad del Rendimiento del Cereal y Leche por Año",
+  labs(title = "Variabilidad del Rendimiento del Coco",
        x = "Año",
        y = "Rendimiento",
        color = "Cultivo") +
@@ -285,9 +288,33 @@ El gráfico de caja muestra la distribución del rendimiento del coco para cada 
 
 - Año 2006: La mediana del rendimiento está notablemente por debajo de las 10,000 unidades, indicando que la mayoría de los rendimientos fueron bajos. Sin embargo, hay varios valores atípicos que alcanzan cerca de 40,000 unidades, lo que sugiere que algunos cultivos o regiones tuvieron un rendimiento excepcionalmente alto. La distribución es aproximadamente simétrica, mostrando un equilibrio en ambos lados de la mediana.
 
-- Año 2011: En este año, se observa una ligera asimetría positiva, con la mayoría de los rendimientos concentrados en niveles altos (cercanos o superiores a 10,000). Esto sugiere un aumento general en la productividad del coco en comparación con los años anteriores.
+- Año 2011: Este año presenta un rendimiento promedio alto, lo que indica que, en general, la producción de coco fue buena. Sin embargo, la alta variabilidad en los rendimientos, junto con una asimetría positiva, sugiere que algunos rendimientos fueron mucho más altos que otros, lo que puede reflejar una mezcla de factores que afectaron la consistencia en los resultados de la cosecha..
 
-- Año 2014: Este año presenta una gran variabilidad en los rendimientos, con la mayor parte de los valores en niveles altos. La distribución es asimétrica y muestra una tendencia hacia rendimientos elevados, con más del 50% de los datos en niveles altos, aunque algunos valores atípicos sobresalen en la parte baja del rango.
+- Año 2014: Este año presenta una gran variabilidad en los rendimientos, con la mayor parte de los valores en niveles altos. La distribución es asimétrica y muestra una tendencia hacia rendimientos elevados. Podemos observar que el 75% de los valores de rendimiento alcanzan o superan los 8,378.576, lo que sugiere que hubo algunos meses con una producción notablemente alta de coco. La desviación estándar para este año es de 7,835.711, lo cual indica que los datos están considerablemente dispersos alrededor de la media, reflejando una variabilidad significativa en la producción mensual.
+
+
+```{r, out.width='100%', echo=FALSE}
+combined_data__ <- combined_data %>%
+  filter(Crop != "Coconut ") %>%
+  filter(!is.na(Rendimiento) & !is.na(Production)) %>%
+  filter(Rendimiento >= 0 & Rendimiento <= 200, Production >= 0 & Production <= 200)
+
+# Tomar una muestra del 10% de los datos
+set.seed(123)  # Para reproducibilidad
+sample_data <- combined_data__ %>% sample_frac(0.1)
+
+ggplot(sample_data, aes(x = Rendimiento, y = Production)) +
+  geom_point(color = "blue", alpha = 0.6) +
+  labs(
+    title = "Relación entre Producción y Rendimiento del Coco",
+    x = "Rendimiento",
+    y = "Producción"
+  ) +
+  theme_minimal()
+```
+En este análisis observamos una gran concentración de datos cercanos a 0 en el eje X, lo que indica un rendimiento bajo independientemente de la producción del cultivo. A pesar de este rendimiento bajo, la producción presenta una mayor variabilidad, alcanzando valores significativamente altos en algunos casos.
+
+Es importante mencionar que esta gráfica muestra solo una parte de la totalidad de los datos debido a la gran cantidad de observaciones, por lo que estamos viendo una muestra limitada para facilitar el análisis visual.
 
 \newpage
 
@@ -299,11 +326,7 @@ La caña de azúcar ha demostrado ser un cultivo fundamental en la agricultura i
 
 En cuanto al coco, India se destaca como el mayor productor mundial, con un rendimiento notablemente alto en comparación con otros cultivos. Esto se debe a condiciones agroclimáticas favorables y a técnicas de cultivo optimizadas. Sin embargo, el análisis también revela posibles inconsistencias en la interpretación de los datos de producción, ya que las unidades de medición pueden variar entre cultivos, afectando la percepción de volumen de producción.
 
-La investigación también subraya la importancia de desarrollar modelos predictivos que puedan anticipar fluctuaciones en la producción debido a factores como el cambio climático, las políticas agrícolas y las plagas. Estos modelos permitirían una planificación más eficiente y una mejor toma de decisiones para mitigar riesgos en la seguridad alimentaria del país.
-
 En conclusión, India posee una capacidad agrícola robusta y diversificada, con cultivos que aportan significativamente a la economía y a la seguridad alimentaria mundial. No obstante, el país enfrenta desafíos que requieren una gestión sostenible de los recursos y políticas inclusivas para asegurar que el sector agrícola pueda seguir siendo un pilar de crecimiento y estabilidad en el largo plazo.
-
-
 
 \newpage
 

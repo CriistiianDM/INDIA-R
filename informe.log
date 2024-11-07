@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.19)  6 NOV 2024 01:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.19)  6 NOV 2024 20:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -452,7 +452,7 @@ Package fancyhdr Warning: \headheight is too small (40.0pt):
 
 File: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg Graphic file (type jpg)
 <use C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg>
-Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 174.
+Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 178.
 (pdftex.def)             Requested size: 56.90189pt x 49.84428pt.
 
 Package fancyhdr Warning: \headheight is too small (40.0pt): 
@@ -465,7 +465,7 @@ Package fancyhdr Warning: \headheight is too small (40.0pt):
 
 File: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg Graphic file (type jpg)
 <use C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg>
-Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 253.
+Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 257.
 (pdftex.def)             Requested size: 56.90189pt x 49.84428pt.
 
 Package fancyhdr Warning: \headheight is too small (40.0pt): 
@@ -478,7 +478,7 @@ Package fancyhdr Warning: \headheight is too small (40.0pt):
 
 File: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg Graphic file (type jpg)
 <use C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg>
-Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 292.
+Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 296.
 (pdftex.def)             Requested size: 56.90189pt x 49.84428pt.
 
 Package fancyhdr Warning: \headheight is too small (40.0pt): 
@@ -491,7 +491,7 @@ Package fancyhdr Warning: \headheight is too small (40.0pt):
 
 File: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg Graphic file (type jpg)
 <use C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg>
-Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 344.
+Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 348.
 (pdftex.def)             Requested size: 56.90189pt x 49.84428pt.
 
 Package fancyhdr Warning: \headheight is too small (40.0pt): 
@@ -504,18 +504,18 @@ Package fancyhdr Warning: \headheight is too small (40.0pt):
 <informe_files/figure-latex/unnamed-chunk-2-1.pdf, id=65, 469.755pt x 325.215pt>
 File: informe_files/figure-latex/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 <use informe_files/figure-latex/unnamed-chunk-2-1.pdf>
-Package pdftex.def Info: informe_files/figure-latex/unnamed-chunk-2-1.pdf  used on input line 349.
+Package pdftex.def Info: informe_files/figure-latex/unnamed-chunk-2-1.pdf  used on input line 353.
 (pdftex.def)             Requested size: 446.26472pt x 308.9525pt.
 <informe_files/figure-latex/unnamed-chunk-3-1.pdf, id=66, 469.755pt x 325.215pt>
 File: informe_files/figure-latex/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 <use informe_files/figure-latex/unnamed-chunk-3-1.pdf>
-Package pdftex.def Info: informe_files/figure-latex/unnamed-chunk-3-1.pdf  used on input line 372.
+Package pdftex.def Info: informe_files/figure-latex/unnamed-chunk-3-1.pdf  used on input line 376.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
 
 File: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg Graphic file (type jpg)
 <use C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg>
-Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 374.
+Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 378.
 (pdftex.def)             Requested size: 56.90189pt x 49.84428pt.
 
 Package fancyhdr Warning: \headheight is too small (40.0pt): 
@@ -528,7 +528,7 @@ Package fancyhdr Warning: \headheight is too small (40.0pt):
 
 File: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg Graphic file (type jpg)
 <use C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg>
-Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 397.
+Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 401.
 (pdftex.def)             Requested size: 56.90189pt x 49.84428pt.
 
 Package fancyhdr Warning: \headheight is too small (40.0pt): 
@@ -541,13 +541,13 @@ Package fancyhdr Warning: \headheight is too small (40.0pt):
 <informe_files/figure-latex/unnamed-chunk-4-1.pdf, id=86, 469.755pt x 325.215pt>
 File: informe_files/figure-latex/unnamed-chunk-4-1.pdf Graphic file (type pdf)
 <use informe_files/figure-latex/unnamed-chunk-4-1.pdf>
-Package pdftex.def Info: informe_files/figure-latex/unnamed-chunk-4-1.pdf  used on input line 402.
+Package pdftex.def Info: informe_files/figure-latex/unnamed-chunk-4-1.pdf  used on input line 406.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
 
 File: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg Graphic file (type jpg)
 <use C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg>
-Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 429.
+Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 439.
 (pdftex.def)             Requested size: 56.90189pt x 49.84428pt.
 
 Package fancyhdr Warning: \headheight is too small (40.0pt): 
@@ -557,10 +557,21 @@ Package fancyhdr Warning: \headheight is too small (40.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-13.44432pt}.
 
 [10 <./informe_files/figure-latex/unnamed-chunk-4-1.pdf>]
+<informe_files/figure-latex/unnamed-chunk-5-1.pdf, id=97, 469.755pt x 325.215pt>
+File: informe_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (type pdf)
+<use informe_files/figure-latex/unnamed-chunk-5-1.pdf>
+Package pdftex.def Info: informe_files/figure-latex/unnamed-chunk-5-1.pdf  used on input line 441.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 441--447
+[][]
+ []
+
+
 
 File: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg Graphic file (type jpg)
 <use C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg>
-Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 431.
+Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 453.
 (pdftex.def)             Requested size: 56.90189pt x 49.84428pt.
 
 Package fancyhdr Warning: \headheight is too small (40.0pt): 
@@ -569,11 +580,11 @@ Package fancyhdr Warning: \headheight is too small (40.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-13.44432pt}.
 
-[11]
+[11 <./informe_files/figure-latex/unnamed-chunk-5-1.pdf>]
 
 File: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg Graphic file (type jpg)
 <use C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg>
-Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 475.
+Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 490.
 (pdftex.def)             Requested size: 56.90189pt x 49.84428pt.
 
 Package fancyhdr Warning: \headheight is too small (40.0pt): 
@@ -584,28 +595,28 @@ Package fancyhdr Warning: \headheight is too small (40.0pt):
 
 [12]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 483.
+(Font)              <10> on input line 498.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 483.
+(Font)              <7> on input line 498.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 483.
+(Font)              <5> on input line 498.
 
-Underfull \hbox (badness 10000) in paragraph at lines 485--489
+Underfull \hbox (badness 10000) in paragraph at lines 500--504
 \T1/lmr/m/n/10 standard . com / article / markets / sugarcane -[] area -[] poised -[] to -[] rise -[] by -[] 8 -[] 10 -[] in -[] 2011 -[] 12 -[] 111052600014 _ 1 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 489--493
+Underfull \hbox (badness 10000) in paragraph at lines 504--508
 \T1/lmr/m/n/10 / / apps . fas . usda . gov / newgainapi / api / report / downloadreportby^^\lename ? ^^\lename = Sugar % 20Annual _
  []
 
 
-Underfull \hbox (badness 1622) in paragraph at lines 497--500
+Underfull \hbox (badness 1622) in paragraph at lines 512--515
 []\T1/lmr/m/n/10 ``Top 10 de países pro-duc-tores de caña de azú-car en 2023-2024'' en Tec-ni-cana. []$https : / /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 497--500
+Underfull \hbox (badness 10000) in paragraph at lines 512--515
 \T1/lmr/m/n/10 tecnicana . org / 2024 / 04 / 26 / mercados / top -[] 10 -[] de -[] paises -[] productores -[] de -[] cana -[] de -[] azucar -[] en -[] 2023 -[]
  []
 
@@ -613,7 +624,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 497--500
 
 File: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg Graphic file (type jpg)
 <use C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg>
-Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 502.
+Package pdftex.def Info: C:/Users/USUARIO/Documents/GitHub/BRICS-R/public/assests/logo/logo.jpg  used on input line 517.
 (pdftex.def)             Requested size: 56.90189pt x 49.84428pt.
 
 Package fancyhdr Warning: \headheight is too small (40.0pt): 
@@ -629,18 +640,18 @@ L3 programming layer <2024-08-30>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 11375 strings out of 475539
- 177806 string characters out of 5775724
- 572230 words of memory out of 5000000
- 33808 multiletter control sequences out of 15000+600000
+ 11384 strings out of 475539
+ 178305 string characters out of 5775724
+ 572221 words of memory out of 5000000
+ 33817 multiletter control sequences out of 15000+600000
  607507 words of font info for 77 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 89i,16n,93p,796b,514s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,16n,93p,694b,514s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/USUARIO/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmro10.pfb>
-Output written on informe.pdf (13 pages, 265613 bytes).
+Output written on informe.pdf (13 pages, 1052372 bytes).
 PDF statistics:
- 229 PDF objects out of 1000 (max. 8388607)
- 192 compressed objects within 2 object streams
+ 238 PDF objects out of 1000 (max. 8388607)
+ 199 compressed objects within 2 object streams
  41 named destinations out of 1000 (max. 500000)
- 181 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 186 words of extra memory for PDF output out of 10000 (max. 10000000)
 

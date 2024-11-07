@@ -43,6 +43,12 @@ combined_data <- do.call(rbind, lapply(csv_files, function(file) {
   read.csv(file, sep = ",", stringsAsFactors = FALSE)
 }))
 
+combined_data <- combined_data %>%
+  filter(Crop != "Coconut ")
+
+unique_season <- unique(combined_data$Season)
+
+nrow(combined_data)
 # combined_data Aqui tienes la informacion para pintar los graficos
 head(combined_data)
 #nrow(combined_data)
@@ -50,6 +56,7 @@ head(combined_data)
 # Saco los datos unicos por año y tipo de cultivo
 unique_crops <- unique(combined_data$Crop)
 unique_year <- unique(combined_data$Crop_Year)
+
 
 # Saco el promedio del rendimiento por año de un tipo de cultivo 
 average_yield <- aggregate(Rendimiento ~ Crop + Crop_Year, data = combined_data, FUN = mean)
@@ -294,4 +301,27 @@ ggplot(data = coconut_data, aes(x = as.factor(Crop_Year), y = Rendimiento)) +
        x = "Ano",
        y = "Rendimiento",
        color = "Cultivo") +
+  theme_minimal()
+
+
+############  
+
+combined_data__ <- combined_data %>%
+  filter(Crop != "Coconut ")
+
+combined_data__ <- combined_data__ %>%
+  filter(!is.na(Rendimiento) & !is.na(Production))
+
+combined_data__ <- combined_data__ %>%
+  filter(Rendimiento > 0, Production > 0)
+
+ggplot(combined_data, aes(x = Rendimiento, y = Production)) +
+  geom_point(color = "blue", alpha = 0.6) +
+  labs(
+    title = "Relación entre Producción y Rendimiento",
+    x = "Rendimiento",
+    y = "Producción"
+  ) +
+  xlim(0, 10000) +     # Ajusta el límite de Rendimiento
+  ylim(0, 10000000) +  # Ajusta el límite de Producción
   theme_minimal()
