@@ -43,12 +43,12 @@ combined_data <- do.call(rbind, lapply(csv_files, function(file) {
   read.csv(file, sep = ",", stringsAsFactors = FALSE)
 }))
 
-combined_data <- combined_data %>%
+coconut_data <- combined_data %>%
   filter(Crop != "Coconut ")
 
 unique_season <- unique(combined_data$Season)
 
-nrow(combined_data)
+head(unique_season, n=10)
 # combined_data Aqui tienes la informacion para pintar los graficos
 head(combined_data)
 #nrow(combined_data)
@@ -90,7 +90,7 @@ ggplot(data = top_crops_data, aes(x = Crop_Year, y = Rendimiento, color = Crop, 
 
 # Grafico auxiliar
 coconut_data <- average_yield %>%
-  filter(Crop == "Other Cereals & Millets")
+  filter(Crop == "Coconut ")
 
 head(coconut_data)
 
@@ -195,7 +195,7 @@ ggplot(data = top_15_states_long, aes(x = reorder(State_Name, Value), y = Value,
 ####### 
 
 coconut_data <- combined_data %>%
-  filter(Crop == "Other Cereals & Millets")
+  filter(Crop == "Coconut ")
 
 # Crear el gráfico de cajas
 ggplot(data = coconut_data, aes(x = as.factor(Crop_Year), y = Rendimiento)) +
@@ -245,7 +245,7 @@ ggplot(data = top_crops_data_production, aes(x = Crop_Year, y = Production, colo
 
 combined_data <- combined_data %>%
   filter(Crop != "Coconut ")
-
+head(co)
 average_production <- aggregate(Production ~ Crop + Crop_Year, data = combined_data, FUN = mean)
 
 # Seleccionar los 10 cultivos principales por año basados en la producción
@@ -276,7 +276,7 @@ ggplot(data = top_crops_data_production, aes(x = Crop_Year, y = Production, colo
 
 ############### 
 coconut_data <- combined_data %>%
-  filter(Crop == "Other Cereals & Millets" & !is.na(Production) & is.finite(Production))
+  filter(Crop == "Coconut " & !is.na(Production) & is.finite(Production))
 
 # Verifica si quedan datos después del filtro
 print(nrow(coconut_data))
@@ -312,16 +312,33 @@ combined_data__ <- combined_data %>%
 combined_data__ <- combined_data__ %>%
   filter(!is.na(Rendimiento) & !is.na(Production))
 
-combined_data__ <- combined_data__ %>%
-  filter(Rendimiento > 0, Production > 0)
+set.seed(123)  # Para reproducibilidad
+sample_data <- combined_data__ %>% sample_frac(0.1)
 
-ggplot(combined_data, aes(x = Rendimiento, y = Production)) +
+ggplot(sample_data, aes(x = Rendimiento, y = Production)) +
   geom_point(color = "blue", alpha = 0.6) +
   labs(
     title = "Relación entre Producción y Rendimiento",
     x = "Rendimiento",
     y = "Producción"
   ) +
-  xlim(0, 10000) +     # Ajusta el límite de Rendimiento
-  ylim(0, 10000000) +  # Ajusta el límite de Producción
+  xlim(0, 200) +
+  ylim(0, 200) +
   theme_minimal()
+
+head(coconut_data)
+coconut_2014 <- coconut_data %>%
+  filter(Crop_Year == 2011)
+
+# Calcular las estadísticas
+rendimiento_stats <- coconut_2014 %>%
+  summarize(
+    mean_rendimiento = mean(Rendimiento, na.rm = TRUE),
+    sd_rendimiento = sd(Rendimiento, na.rm = TRUE),
+    coef_var = (sd_rendimiento / mean_rendimiento) * 100,
+    q1 = quantile(Rendimiento, 0.25, na.rm = TRUE),
+    median = median(Rendimiento, na.rm = TRUE),
+    q3 = quantile(Rendimiento, 0.75, na.rm = TRUE)
+  )
+
+print(rendimiento_stats)

@@ -176,7 +176,7 @@ combined_data <- do.call(rbind, lapply(csv_files, function(file) {
 }))
 
 combined_data_ <- combined_data %>%
-  filter(Crop != "Coconut ")
+  filter(!(Crop %in% c("Coconut ")))
 
 average_production <- aggregate(Production ~ Crop + Crop_Year, data = combined_data_, FUN = mean)
 
@@ -196,8 +196,8 @@ top_crops_data_production <- average_production %>%
 
 # Crear el gráfico para la producción
 ggplot(data = top_crops_data_production, aes(x = Crop_Year, y = Production, color = Crop, group = Crop)) +
-  geom_line(linewidth = 1) +  # Línea para cada cultivo
-  geom_point(size = 2) +      # Puntos en la línea
+  geom_line(linewidth = 1) +
+  geom_point(size = 2) +
   labs(title = "Producción Promedio de los 10 Principales Cultivos por Año",
        x = "Año",
        y = "Producción Promedio",
@@ -246,8 +246,8 @@ top_crops_data <- average_yield %>%
 
 # Crear el gráfico
 ggplot(data = top_crops_data, aes(x = Crop_Year, y = Rendimiento, color = Crop, group = Crop)) +
-  geom_line(linewidth  = 1) +  # Línea para cada cultivo
-  geom_point(size = 2) + # Puntos en la línea
+  geom_line(linewidth  = 1) +  
+  geom_point(size = 2) +
   labs(title = "Rendimiento Promedio de los 10 Principales Cultivos por Año",
        x = "Año",
        y = "Rendimiento Promedio",
@@ -315,6 +315,45 @@ ggplot(sample_data, aes(x = Rendimiento, y = Production)) +
 En este análisis observamos una gran concentración de datos cercanos a 0 en el eje X, lo que indica un rendimiento bajo independientemente de la producción del cultivo. A pesar de este rendimiento bajo, la producción presenta una mayor variabilidad, alcanzando valores significativamente altos en algunos casos.
 
 Es importante mencionar que esta gráfica muestra solo una parte de la totalidad de los datos debido a la gran cantidad de observaciones, por lo que estamos viendo una muestra limitada para facilitar el análisis visual.
+
+```{r, out.width='100%', echo=FALSE}
+
+coconut_data <- combined_data %>%
+  filter(Crop != "Coconut ")
+
+coconut_data <- coconut_data %>%
+  filter(!(Season %in% c("Kharif   ", "Autumn     ")))
+
+season_totals <- coconut_data %>%
+  group_by(Season) %>%
+  summarize(Total_Production = sum(Production, na.rm = TRUE)) %>%
+  mutate(Percentage = (Total_Production / sum(Total_Production)) * 100)
+
+ggplot(season_totals, aes(x = "", y = Total_Production, fill = Season)) +
+  geom_bar(stat = "identity", width = 1) +
+  coord_polar("y") +
+  labs(title = "Distribución de Producción de Coco en India por Temporada",
+       fill = "Temporada") +
+  theme_minimal() +
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        plot.title = element_text(hjust = 0.5),
+        axis.text.x = element_blank(),
+        axis.ticks = element_blank()) +
+  geom_text(aes(label = paste0(round(Percentage, 1), "%")), 
+            position = position_stack(vjust = 0.5), color = "white")
+```
+
+
+La representación permite observar el porcentaje que cada temporada aporta al total de la producción de coco:
+
+- 40.4% corresponde a la temporada de Rabi, que es la temporada con mayor producción, lo que indica que es la época más productiva para el cultivo del coco.
+- 35.5% de la producción ocurre durante la temporada de Whole Year, sugiriendo que algunos cultivos se mantienen activos todo el año.
+- 18.2% pertenece a la temporada de Summer, destacando esta como otra época significativa para el cultivo del coco.
+- Las temporadas de Winter y Kharif tienen contribuciones menores, con 3.9% y 1.6% respectivamente, indicando una producción limitada durante estas estaciones.
+
+Finalmente, 0.4% se atribuye a otra categoría, lo que podría representar valores atípicos o una categoría residual.
+Este desglose permite ver claramente cómo la producción de coco varía según la temporada, con una alta concentración en Rabi y Whole Year, mientras que las otras estaciones juegan un rol menor en la producción total. Los porcentajes están claramente marcados en el gráfico para facilitar la interpretación.
 
 \newpage
 
